@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import imgMobile from '../images/image-product-mobile.jpg'
+import imgDesktop from '../images/image-product-desktop.jpg'
+import PreviewCard from '../components/PreviewCard.astro';
+
+const cardInfo = {
+	cardImgs : [imgMobile, imgDesktop],
+	category: 'Perfume',
+	title: 'Gabrielle Essence Eau De Parfum',
+	desc: 'A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.',
+	discountedPrice: '$149.99',
+	regularPrice: '$169.99'
+}
+---
+
+<Layout title="Product Preview Card">
+	<main class="min-h-screen flex items-center justify-center">
+		<PreviewCard cardImgs={cardInfo.cardImgs} category={cardInfo.category} title={cardInfo.title} desc={cardInfo.desc} discountedPrice={cardInfo.discountedPrice} regularPrice={cardInfo.regularPrice}/>
+	</main>
+</Layout>
+

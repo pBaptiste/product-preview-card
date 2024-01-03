@@ -1,0 +1,32 @@
+---
+    import ResponsiveImage from "./ResponsiveImage.astro";
+    import { Image } from "astro:assets";
+    import cart from '../images/icon-cart.svg'
+
+    const { cardImgs, category, title, desc, discountedPrice, regularPrice } = Astro.props
+---
+
+<article class="flex flex-col md:flex-row w-[343px] md:w-[600px] h-[611px] md:h-[450px] rounded-[10px] bg-white">
+    <div class="w-full h-[240px] md:w-1/2 md:flex-none md:h-full border">
+        <ResponsiveImage 
+            imgMobile={cardImgs[0]}
+            imgDesktop={cardImgs[1]}
+            alt="Product"
+            />
+    </div>
+    <div class="p-6 md:p-8">
+        <p class="text-xs text-aurometal font-medium tracking-[5px] uppercase mb-3 md:mb-5">{category}</p>
+        <h2 class="font-serif text-[2rem] text-gunmetal font-bold leading-[2rem] mb-4 md:mb-6">{title}</h2>
+        <p class="text-sm text-aurometal font-medium leading-[1.438rem] mb-[24px] md:mb-[29px]">{desc}</p>
+
+        <div class="flex items-center gap-[19px] mb-5 md:mb-[30px]">
+            <p class="text-deep-aquamarine text-[2rem] font-serif font-bold leading-[2rem]">{discountedPrice}</p>
+            <p class="text-aurometal text-[0.813rem] font-medium leading-[1.438rem] line-through">{regularPrice}</p>
+        </div>
+
+        <button class="flex items-center w-full h-[48px] rounded-lg justify-center gap-3 bg-deep-aquamarine hover:bg-[#1A4032] transition-colors duration-500 text-white text-sm font-bold">
+            <Image src={cart} alt="cart icon"/>
+            Add to Cart
+        </button>
+    </div>
+</article>
