@@ -6,12 +6,12 @@
     const { cardImgs, category, title, desc, discountedPrice, regularPrice } = Astro.props
 ---
 
-<article class="flex flex-col md:flex-row w-[343px] md:w-[600px] h-[611px] md:h-[450px] rounded-[10px] bg-white">
+<article class="flex flex-col md:flex-row max-w-[343px] md:max-w-[600px] max-h-[611px] md:max-h-[450px] rounded-[10px] bg-white">
     <div class="w-full h-[240px] md:w-1/2 md:flex-none md:h-full border">
         <ResponsiveImage 
             imgMobile={cardImgs[0]}
             imgDesktop={cardImgs[1]}
-            alt="Product"
+            alt=""
             />
     </div>
     <div class="p-6 md:p-8">
@@ -25,7 +25,7 @@
         </div>
 
         <button class="flex items-center w-full h-[48px] rounded-lg justify-center gap-3 bg-deep-aquamarine hover:bg-[#1A4032] transition-colors duration-500 text-white text-sm font-bold">
-            <Image src={cart} alt="cart icon"/>
+            <Image src={cart} alt=""/>
             Add to Cart
         </button>
     </div>
